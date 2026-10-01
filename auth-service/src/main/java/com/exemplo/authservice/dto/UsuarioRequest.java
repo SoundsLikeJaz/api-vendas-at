@@ -3,15 +3,7 @@ package com.exemplo.authservice.dto;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
 public class UsuarioRequest {
 
     @NotBlank(message = "nome e obrigatorio")
@@ -24,4 +16,36 @@ public class UsuarioRequest {
     @NotBlank(message = "senha e obrigatoria")
     @Size(min = 6, message = "senha deve ter no minimo 6 caracteres")
     private String senha;
+
+    public UsuarioRequest() {
+
+    }
+
+    public UsuarioRequest(String nome, String email, String senha) {
+        this.nome = nome;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
 }

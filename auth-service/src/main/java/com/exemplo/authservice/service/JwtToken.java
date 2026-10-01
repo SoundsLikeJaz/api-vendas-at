@@ -13,7 +13,7 @@ import io.jsonwebtoken.security.Keys;
 @Service 
 public class JwtToken {
 
-    private  SecretKey secretKey;
+    private SecretKey secretKey;
 
     public JwtToken(@Value("${jwt.secret}") String segredo) {
         secretKey = Keys.hmacShaKeyFor(segredo.getBytes());

@@ -5,7 +5,6 @@ import com.exemplo.authservice.dto.UsuarioRequest;
 import com.exemplo.authservice.model.Usuario;
 import com.exemplo.authservice.service.JwtToken;
 import com.exemplo.authservice.service.UsuarioService;
-import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -15,11 +14,15 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/usuarios")
-@RequiredArgsConstructor
 public class UsuarioController {
 
     private final UsuarioService service;
     private final JwtToken jwtService;
+
+    public UsuarioController(UsuarioService service, JwtToken jwtService) {
+        this.service = service;
+        this.jwtService = jwtService;
+    }
 
     @PostMapping
     public ResponseEntity<Long> cadastrar(@RequestBody UsuarioRequest request) {

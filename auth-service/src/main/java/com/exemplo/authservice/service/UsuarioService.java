@@ -4,18 +4,21 @@ import com.exemplo.authservice.dto.LoginRequest;
 import com.exemplo.authservice.dto.UsuarioRequest;
 import com.exemplo.authservice.model.Usuario;
 import com.exemplo.authservice.repository.UsuarioRepository;
-import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
 @Service
-@RequiredArgsConstructor
 public class UsuarioService {
 
     private final UsuarioRepository usuarioRepository;
     private final PasswordEncoder passwordEncoder;
+
+    public UsuarioService(UsuarioRepository usuarioRepository, PasswordEncoder passwordEncoder) {
+        this.usuarioRepository = usuarioRepository;
+        this.passwordEncoder = passwordEncoder;
+    }
 
     public Usuario cadastrar(UsuarioRequest request) {
         if (usuarioRepository.existsByEmail(request.getEmail())) {

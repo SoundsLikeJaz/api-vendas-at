@@ -1,7 +1,7 @@
-package com.exemplo.clientesservice.config;
+package com.exemplo.fornecedoresservice.config;
 
-import com.exemplo.clientesservice.model.Cliente;
-import com.exemplo.clientesservice.repository.ClienteRepository;
+import com.exemplo.fornecedoresservice.model.Cliente;
+import com.exemplo.fornecedoresservice.repository.ClienteRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 

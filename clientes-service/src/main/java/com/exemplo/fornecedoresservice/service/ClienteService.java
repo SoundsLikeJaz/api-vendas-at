@@ -1,7 +1,7 @@
-package com.exemplo.clientesservice.service;
+package com.exemplo.fornecedoresservice.service;
 
-import com.exemplo.clientesservice.model.Cliente;
-import com.exemplo.clientesservice.repository.ClienteRepository;
+import com.exemplo.fornecedoresservice.model.Cliente;
+import com.exemplo.fornecedoresservice.repository.ClienteRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
