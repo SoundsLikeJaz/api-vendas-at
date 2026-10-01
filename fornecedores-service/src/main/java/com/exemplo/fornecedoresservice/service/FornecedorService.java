@@ -1,7 +1,7 @@
 package com.exemplo.fornecedoresservice.service;
 
 import com.exemplo.fornecedoresservice.model.Fornecedor;
-import com.exemplo.fornecedoresservice.repository.FornecedorRepository;
+import com.exemplo.fornecedoresservice.repository.ForneRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -14,17 +14,17 @@ import java.util.Optional;
 @Service
 public class FornecedorService {
 
-    private final FornecedorRepository fornecedorRepository;
+    private final ForneRepository forneRepository;
 
-    public FornecedorService(FornecedorRepository fornecedorRepository) {
-        this.fornecedorRepository = fornecedorRepository;
+    public FornecedorService(ForneRepository forneRepository) {
+        this.forneRepository = forneRepository;
     }
 
     public List<Fornecedor> listarTodos() {
-        return fornecedorRepository.findAll();
+        return forneRepository.findAll();
     }
 
     public Optional<Fornecedor> buscarPorId(Long id) {
-        return fornecedorRepository.findById(id);
+        return forneRepository.findById(id);
     }
 }
