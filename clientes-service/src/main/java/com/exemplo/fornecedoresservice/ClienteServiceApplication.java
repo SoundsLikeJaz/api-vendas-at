@@ -1,4 +1,4 @@
-package com.exemplo.clientesservice;
+package com.exemplo.fornecedoresservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

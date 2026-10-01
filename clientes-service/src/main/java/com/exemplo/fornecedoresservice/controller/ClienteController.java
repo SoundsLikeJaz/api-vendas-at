@@ -1,10 +1,8 @@
-package com.exemplo.clientesservice.controller;
+package com.exemplo.fornecedoresservice.controller;
 
-import com.exemplo.clientesservice.model.Cliente;
-import com.exemplo.clientesservice.service.ClienteService;
-import org.springframework.http.ResponseEntity;
+import com.exemplo.fornecedoresservice.model.Cliente;
+import com.exemplo.fornecedoresservice.service.ClienteService;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 

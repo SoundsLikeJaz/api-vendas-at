@@ -1,4 +1,4 @@
-package com.exemplo.clientesservice.model;
+package com.exemplo.fornecedoresservice.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -7,11 +7,9 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
-import java.math.BigDecimal;
-
 @Entity
-@Table(name = "cliente")
-public class Cliente {
+@Table(name = "fornecedor")
+public class Fornecedor {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,14 +19,14 @@ public class Cliente {
     private String nome;
 
     @Column(nullable = false, unique = true)
-    private String email;
+    private String cnpj;
 
-    public Cliente() {
+    public Fornecedor() {
     }
 
-    public Cliente(String nome, String email) {
+    public Fornecedor(String nome, String email) {
         this.nome = nome;
-        this.email = email;
+        this.cnpj = email;
     }
     
     public Long getId() {
@@ -47,11 +45,11 @@ public class Cliente {
         this.nome = nome;
     }
 
-    public String getEmail() {
-        return email;
+    public String getCnpj() {
+        return cnpj;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setCnpj(String email) {
+        this.cnpj = email;
     }
 }
