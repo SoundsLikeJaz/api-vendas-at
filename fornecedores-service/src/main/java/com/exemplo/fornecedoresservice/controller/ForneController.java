@@ -1,12 +1,10 @@
 package com.exemplo.fornecedoresservice.controller;
 
+import com.exemplo.fornecedoresservice.dto.ProdutoDTO;
 import com.exemplo.fornecedoresservice.model.Fornecedor;
 import com.exemplo.fornecedoresservice.service.FornecedorService;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -20,9 +18,19 @@ public class ForneController {
         this.service = service;
     }
 
+    @PostMapping
+    public Fornecedor salvar(@RequestBody Fornecedor fornecedor) {
+        return service.salvar(fornecedor);
+    }
+
     @GetMapping
     public List<Fornecedor> listarTodos() {
         return service.listarTodos();
+    }
+
+    @GetMapping("/produtos")
+    public List<ProdutoDTO> listarProdutos() {
+        return service.listarProdutos();
     }
 
     @GetMapping("/{id}")
